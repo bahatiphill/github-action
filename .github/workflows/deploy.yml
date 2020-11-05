@@ -1,0 +1,12 @@
+name: Deploy to Server
+
+on: push
+  branches:
+    - main
+
+jobs:
+  Deploy:
+    name: Deploy to DigitalOcean VPS
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello Github Actions!"
