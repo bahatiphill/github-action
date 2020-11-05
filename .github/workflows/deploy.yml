@@ -10,12 +10,12 @@ jobs:
     name: Deploy to DigitalOcean VPS
     runs-on: ubuntu-latest
     steps:
-      - name: Appleboy SSH into the server
+      - name: Running remote commands
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          key: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
             whoami
