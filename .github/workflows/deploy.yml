@@ -18,5 +18,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            echo "I am In the server BOI"
+            cd /var/www/github-action
+            git pull
+            ls -lisa
+            echo "DONE!"
