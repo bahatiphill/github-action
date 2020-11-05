@@ -10,4 +10,13 @@ jobs:
     name: Deploy to DigitalOcean VPS
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello Github Actions!"
+      - name: Appleboy SSH into the server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          key: ${{secrets.KEY}}
+          port: ${{secrets.PORT}}
+          script: |
+            whoami
+            echo "I am In the server BOI"
